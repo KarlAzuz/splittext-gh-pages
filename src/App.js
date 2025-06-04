@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
+import Aurora from './Aurora';
 
 function App() {
   const [words, setWords] = useState([
@@ -47,29 +48,39 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <input
-        value={input}
-        onChange={e => setInput(e.target.value)}
-        onKeyDown={e => { if (e.key === "Enter") handleAddWord(); }}
-      />
-      <button onClick={handleAddWord}>Add Word</button>
-      <div>
-        {words.map(word => (
-          <span
-            key={word}
-            className="falling-word"
-            style={{
-              display: "inline-block",
-              margin: "10px",
-              transform: `translateY(${positionsRef.current[word] || 0}px)`,
-              transition: "transform 0.1s linear"
-            }}
-            onContextMenu={e => handleWordRightClick(word, e)}
-          >
-            {word}
-          </span>
-        ))}
+    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}>
+        <Aurora />
+      </div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => { if (e.key === "Enter") handleAddWord(); }}
+        />
+        <button onClick={handleAddWord}>Add Word</button>
+        <div>
+          {words.map(word => (
+            <span
+              key={word}
+              className="falling-word"
+              style={{
+                display: "inline-block",
+                margin: "10px",
+                transform: `translateY(${positionsRef.current[word] || 0}px)`,
+                transition: "transform 0.1s linear"
+              }}
+              onContextMenu={e => handleWordRightClick(word, e)}
+            >
+              {word}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
