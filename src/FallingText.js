@@ -17,11 +17,14 @@ const FallingText = ({
   const textRef = useRef(null);
   const canvasContainerRef = useRef(null);
 
+  // Use local state for text to allow dynamic updates
+  const [currentText, setCurrentText] = useState(text);
+  const [inputValue, setInputValue] = useState("");
   const [effectStarted, setEffectStarted] = useState(false);
 
   useEffect(() => {
     if (!textRef.current) return;
-    const words = text.split(" ");
+    const words = currentText.split(" ");
     const newHTML = words
       .map((word) => {
         const isHighlighted = highlightWords.some((hw) => word.startsWith(hw));
@@ -29,7 +32,7 @@ const FallingText = ({
       })
       .join(" ");
     textRef.current.innerHTML = newHTML;
-  }, [text, highlightWords, highlightClass]);
+  }, [currentText, highlightWords, highlightClass]);
 
   useEffect(() => {
     if (trigger === "auto") {
@@ -174,11 +177,21 @@ const FallingText = ({
     wireframes,
     backgroundColor,
     mouseConstraintStiffness,
+    currentText // rerun effect when text changes
   ]);
 
   const handleTrigger = () => {
     if (!effectStarted && (trigger === "click" || trigger === "hover")) {
       setEffectStarted(true);
+    }
+  };
+
+  // Handle input box changes and submission
+  const handleInputChange = (e) => setInputValue(e.target.value);
+  const handleInputKeyDown = (e) => {
+    if (e.key === "Enter" && inputValue.trim()) {
+      setCurrentText((prev) => prev ? prev + " " + inputValue.trim() : inputValue.trim());
+      setInputValue("");
     }
   };
 
@@ -189,19 +202,62 @@ const FallingText = ({
       onClick={trigger === "click" ? handleTrigger : undefined}
       onMouseOver={trigger === "hover" ? handleTrigger : undefined}
       style={{
-        position: "relative",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 9999,
         overflow: "hidden",
+        background: backgroundColor,
       }}
     >
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        onKeyDown={handleInputKeyDown}
+        placeholder="Type a word and press Enter"
+        style={{
+          position: "absolute",
+          top: 16,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10000,
+          fontSize: "1.2rem",
+          padding: "0.5em 1em",
+          borderRadius: "8px",
+          border: "1px solid #ccc",
+          outline: "none",
+          background: "#fff",
+        }}
+      />
       <div
         ref={textRef}
         className="falling-text-target"
         style={{
           fontSize: fontSize,
           lineHeight: 1.4,
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          pointerEvents: "none",
         }}
       />
-      <div ref={canvasContainerRef} className="falling-text-canvas" />
+      <div
+        ref={canvasContainerRef}
+        className="falling-text-canvas"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          pointerEvents: "none",
+        }}
+      />
     </div>
   );
 };
