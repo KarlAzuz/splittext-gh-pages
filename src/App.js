@@ -1,6 +1,10 @@
 import React, { useState, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Aurora from './Aurora';
+import Home from "./pages/Home";
+import Jobs from "./pages/Jobs";
+import Contact from "./pages/Contact";
 
 function App() {
   const [words, setWords] = useState([
@@ -48,41 +52,55 @@ function App() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
-      <div style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 0,
-        pointerEvents: 'none'
-      }}>
-        <Aurora />
-      </div>
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <input
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          onKeyDown={e => { if (e.key === "Enter") handleAddWord(); }}
-        />
-        <button onClick={handleAddWord}>Add Word</button>
-        <div>
-          {words.map(word => (
-            <span
-              key={word}
-              className="falling-word"
-              style={{
-                display: "inline-block",
-                margin: "10px",
-                transform: `translateY(${positionsRef.current[word] || 0}px)`,
-                transition: "transform 0.1s linear"
-              }}
-              onContextMenu={e => handleWordRightClick(word, e)}
-            >
-              {word}
-            </span>
-          ))}
+    <Router basename="/splittext-gh-pages">
+      <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: 'none'
+        }}>
+          <Aurora />
+        </div>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <nav style={{ padding: "1rem", background: "#222", color: "#fff" }}>
+            <Link to="/" style={{ color: "#fff", marginRight: "1rem" }}>Home</Link>
+            <Link to="/jobs" style={{ color: "#fff", marginRight: "1rem" }}>Jobs</Link>
+            <Link to="/contact" style={{ color: "#fff" }}>Contact</Link>
+          </nav>
+          <div style={{ padding: "2rem" }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/jobs" element={<Jobs />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+          <input
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={e => { if (e.key === "Enter") handleAddWord(); }}
+          />
+          <button onClick={handleAddWord}>Add Word</button>
+          <div>
+            {words.map(word => (
+              <span
+                key={word}
+                className="falling-word"
+                style={{
+                  display: "inline-block",
+                  margin: "10px",
+                  transform: `translateY(${positionsRef.current[word] || 0}px)`,
+                  transition: "transform 0.1s linear"
+                }}
+                onContextMenu={e => handleWordRightClick(word, e)}
+              >
+                {word}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
