@@ -1,0 +1,38 @@
+.falling-text-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.falling-text-target {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+
+.falling-text-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+
+.word {
+  display: inline-block;
+  position: relative;
+  transition: color 0.2s;
+  color: #222;
+  background: none;
+  z-index: 2;
+}
+
+.highlighted {
+  color: #fff;
+  background: #0078d4;
+  border-radius: 4px;
+  padding: 0 4px;
+}
