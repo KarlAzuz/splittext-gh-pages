@@ -13,7 +13,6 @@ const FallingText = ({
   mouseConstraintStiffness = 0.2,
   fontSize = "1rem"
 }) => {
-  // ...existing code from prompt...
   const containerRef = useRef(null);
   const textRef = useRef(null);
   const canvasContainerRef = useRef(null);
