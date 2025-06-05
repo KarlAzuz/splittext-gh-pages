@@ -8,6 +8,8 @@ import CardSwap, { Card } from "./CardSwap";
 import Dock from "./Dock";
 import { VscHome, VscBriefcase, VscMail } from "react-icons/vsc";
 import Squares from "./Squares";
+import SpotlightCard from "./SpotlightCard";
+import SplitText from "./SplitText";
 
 function DockNav() {
   const navigate = useNavigate();
@@ -48,18 +50,102 @@ function App() {
                     delay={5000}
                     pauseOnHover={false}
                   >
-                    <Card>
-                      <h3>Welcome to the Homepage</h3>
-                      <p>Discover our site with a beautiful retro dark theme and interactive cards.</p>
-                    </Card>
-                    <Card>
-                      <h3>Explore Jobs</h3>
-                      <p>See our current job openings and join our amazing team!</p>
-                    </Card>
-                    <Card>
-                      <h3>Contact Us</h3>
-                      <p>Have questions? Reach out to us anytime.</p>
-                    </Card>
+                    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <Card>
+                        <h3>
+                          <SplitText
+                            text="Welcome to the Homepage"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
+                            duration={0.7}
+                            ease="power3.out"
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="center"
+                          />
+                        </h3>
+                        <SplitText
+                          text="Discover our site with a beautiful retro dark theme and interactive cards."
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </Card>
+                    </SpotlightCard>
+                    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <Card>
+                        <h3>
+                          <SplitText
+                            text="Explore Jobs"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
+                            duration={0.7}
+                            ease="power3.out"
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="center"
+                          />
+                        </h3>
+                        <SplitText
+                          text="See our current job openings and join our amazing team!"
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </Card>
+                    </SpotlightCard>
+                    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <Card>
+                        <h3>
+                          <SplitText
+                            text="Contact Us"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
+                            duration={0.7}
+                            ease="power3.out"
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="center"
+                          />
+                        </h3>
+                        <SplitText
+                          text="Have questions? Reach out to us anytime."
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </Card>
+                    </SpotlightCard>
                   </CardSwap>
                 </div>
               } />
