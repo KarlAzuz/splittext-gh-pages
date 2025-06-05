@@ -7,9 +7,9 @@ import Contact from "./pages/Contact";
 import CardSwap, { Card } from "./CardSwap";
 import Dock from "./Dock";
 import { VscHome, VscBriefcase, VscMail } from "react-icons/vsc";
-import Squares from "./Squares";
 import SplitText from "./SplitText";
 import StarBorder from "./StarBorder";
+import Particles from "./Particles";
 
 function DockNav() {
   const navigate = useNavigate();
@@ -44,12 +44,19 @@ function App() {
   return (
     <Router basename="/splittext-gh-pages">
       <div className="app-root">
-        <div className="background-squares">
-          <Squares 
-            speed={0.5} 
-            squareSize={40}
-            direction="diagonal"
-          />
+        <div className="background-particles">
+          <div style={{ width: '100vw', height: '100vh', position: 'fixed', inset: 0, zIndex: 0 }}>
+            <Particles
+              particleColors={['#ffffff', '#ffffff']}
+              particleCount={200}
+              particleSpread={10}
+              speed={0.1}
+              particleBaseSize={100}
+              moveParticlesOnHover={true}
+              alphaParticles={false}
+              disableRotation={false}
+            />
+          </div>
         </div>
         <div className="content">
           <div className="main-content">
