@@ -1,11 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
 import Contact from "./pages/Contact";
 import Dither from "./Dither";
 import CardSwap, { Card } from "./CardSwap";
+import Dock from "./Dock";
+import { VscHome, VscBriefcase, VscMail } from "react-icons/vsc";
+
+function DockNav() {
+  const navigate = useNavigate();
+  const items = [
+    { icon: <VscHome size={22} />, label: "Home", onClick: () => navigate("/") },
+    { icon: <VscBriefcase size={22} />, label: "Jobs", onClick: () => navigate("/jobs") },
+    { icon: <VscMail size={22} />, label: "Contact", onClick: () => navigate("/contact") }
+  ];
+  return (
+    <Dock
+      items={items}
+      panelHeight={68}
+      baseItemSize={50}
+      magnification={70}
+    />
+  );
+}
 
 function App() {
   return (
@@ -25,11 +44,6 @@ function App() {
           />
         </div>
         <div className="content">
-          <nav className="main-nav">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/jobs" className="nav-link">Jobs</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
-          </nav>
           <div className="main-content">
             <Routes>
               <Route path="/" element={
@@ -59,6 +73,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
+          <DockNav />
         </div>
       </div>
     </Router>
