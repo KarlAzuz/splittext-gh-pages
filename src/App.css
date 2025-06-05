@@ -163,13 +163,49 @@ button:hover {
   transition: box-shadow 0.2s;
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #7fd7ff;
+.card,
+.card-spotlight,
+.home-card {
+  border: 1.5px solid rgba(127, 215, 255, 0.18);
+  box-sizing: border-box;
 }
 
-.card p {
-  color: #e0e6ed;
+.home-card {
+  min-width: 340px;
+  max-width: 420px;
+  min-height: 320px;
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-spotlight {
+  border-radius: 16px;
+  border: 1.5px solid rgba(127, 215, 255, 0.18);
+  box-sizing: border-box;
+  padding: 6px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-icon-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
 }
 
 @media (max-width: 600px) {
