@@ -192,6 +192,21 @@ button:hover {
   height: 40px;
 }
 
+.app-background {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #222; /* or any color you want */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-center {
+  color: #fff;
+  font-size: 2rem;
+  /* Add any other styling you want for the placeholder */
+}
+
 @media (max-width: 600px) {
   .dock-panel {
     bottom: 12px;
