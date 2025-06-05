@@ -34,6 +34,7 @@ html, body, #root, .app-root {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   background: #181a20;
   color: #f3f6fa;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .app-root {
@@ -129,6 +130,7 @@ html, body, #root, .app-root {
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow-x: auto; /* Allow nav to scroll horizontally if needed */
 }
 
 .nav-logo {
@@ -141,6 +143,9 @@ html, body, #root, .app-root {
 .nav-links {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap; /* Allow links to wrap on small screens */
+  justify-content: flex-end;
+  min-width: 0;
 }
 
 .nav-link {
@@ -151,6 +156,7 @@ html, body, #root, .app-root {
   padding: 0.5em 0;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-bottom 0.2s;
+  white-space: nowrap; /* Prevent link text from breaking */
 }
 
 .nav-link.active,
@@ -171,15 +177,28 @@ html, body, #root, .app-root {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .top-nav {
+    padding: 0 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .top-nav {
     flex-direction: column;
     height: auto;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     gap: 0.5rem;
+    align-items: flex-start;
   }
   .nav-links {
-    gap: 1rem;
+    width: 100%;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .main-content {
     padding: 1rem;
