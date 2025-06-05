@@ -35,8 +35,6 @@ function App() {
             speed={0.5} 
             squareSize={40}
             direction="diagonal"
-            borderColor="#fff"
-            hoverFillColor="#222"
           />
         </div>
         <div className="content">

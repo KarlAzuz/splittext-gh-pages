@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import './Squares.css';
 
 function getDirectionVector(direction) {
   switch (direction) {
@@ -15,8 +16,8 @@ export default function Squares({
   speed = 0.5,
   squareSize = 40,
   direction = "diagonal",
-  borderColor = "#fff",
-  hoverFillColor = "#222"
+  borderColor = "rgba(120,180,255,0.13)", // toned down
+  hoverFillColor = "rgba(60,80,120,0.18)" // subtle highlight
 }) {
   const canvasRef = useRef(null);
   const [hovered, setHovered] = useState({ x: -1, y: -1 });
@@ -50,9 +51,12 @@ export default function Squares({
           let px = x * squareSize - offsetX;
           let py = y * squareSize - offsetY;
           ctx.save();
+          // Animate hover fill with subtle alpha
           if (hovered.x === x && hovered.y === y) {
             ctx.fillStyle = hoverFillColor;
+            ctx.globalAlpha = 0.7;
             ctx.fillRect(px, py, squareSize, squareSize);
+            ctx.globalAlpha = 1.0;
           }
           ctx.strokeStyle = borderColor;
           ctx.lineWidth = 1.2;
