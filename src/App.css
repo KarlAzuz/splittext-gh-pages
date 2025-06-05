@@ -60,6 +60,7 @@ html, body, #root, .app-root {
   gap: 2rem;
   min-width: 220px;
   transition: box-shadow 0.2s;
+  border: 1.5px solid rgba(127, 215, 255, 0.18); /* Added border */
 }
 
 .dock-item {
@@ -170,11 +171,13 @@ button:hover {
   box-sizing: border-box;
 }
 
-.home-card {
+.home-card, .card-spotlight.custom-spotlight-card {
   min-width: 340px;
   max-width: 420px;
   min-height: 320px;
   max-height: 420px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
