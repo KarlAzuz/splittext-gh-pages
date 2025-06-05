@@ -1,113 +1,58 @@
 import React from "react";
-import CardSwap, { Card } from "./CardSwap";
-import { motion } from "framer-motion";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
+
+function Home() {
+  return <div className="page-content">Home Page</div>;
+}
+function About() {
+  return <div className="page-content">About Page</div>;
+}
+function Work() {
+  return <div className="page-content">Work Page</div>;
+}
+function Blog() {
+  return <div className="page-content">Blog Page</div>;
+}
+function Contact() {
+  return <div className="page-content">Contact Page</div>;
+}
 
 function App() {
   return (
-    <div className="app-root">
-      {/* Home Section */}
-      <section className="section home-section">
-        <div className="section-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="main-title"
-          >
-            Welcome Home
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="main-desc"
-          >
-            This is your animated home section. Scroll down to see more!
-          </motion.p>
-        </div>
-        {/* Dock/CardSwap */}
-        <CardSwap
-          cardDistance={60}
-          verticalDistance={70}
-          delay={3500}
-          pauseOnHover={true}
-          width={340}
-          height={200}
-        >
-          <Card>
-            <h3>Card 1</h3>
-            <p>Animated dock card one</p>
-          </Card>
-          <Card>
-            <h3>Card 2</h3>
-            <p>Animated dock card two</p>
-          </Card>
-          <Card>
-            <h3>Card 3</h3>
-            <p>Animated dock card three</p>
-          </Card>
-        </CardSwap>
-      </section>
-
-      {/* Job Section */}
-      <section className="section job-section">
-        <div className="section-content">
-          <motion.h2
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            Job Experience
-          </motion.h2>
-          <motion.ul
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="job-list"
-          >
-            <li>
-              <strong>Frontend Developer</strong> at ExampleCorp (2022-2024)
-            </li>
-            <li>
-              <strong>UI Designer</strong> at Designify (2020-2022)
-            </li>
-            <li>
-              <strong>Intern</strong> at WebStart (2019-2020)
-            </li>
-          </motion.ul>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="section contact-section">
-        <div className="section-content">
-          <motion.h2
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            Contact
-          </motion.h2>
-          <motion.form
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="contact-form"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows={4} required />
-            <button type="submit">Send</button>
-          </motion.form>
-        </div>
-      </section>
-    </div>
+    <Router basename="/splittext-gh-pages">
+      <div className="app-root">
+        <nav className="top-nav">
+          <div className="nav-logo">MySite</div>
+          <div className="nav-links">
+            <NavLink to="/" end className="nav-link">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-link">
+              About
+            </NavLink>
+            <NavLink to="/work" className="nav-link">
+              Work
+            </NavLink>
+            <NavLink to="/blog" className="nav-link">
+              Blog
+            </NavLink>
+            <NavLink to="/contact" className="nav-link">
+              Contact
+            </NavLink>
+          </div>
+        </nav>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
