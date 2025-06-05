@@ -4,10 +4,10 @@ import "./App.css";
 import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
 import Contact from "./pages/Contact";
-import Dither from "./Dither";
 import CardSwap, { Card } from "./CardSwap";
 import Dock from "./Dock";
 import { VscHome, VscBriefcase, VscMail } from "react-icons/vsc";
+import Squares from "./Squares";
 
 function DockNav() {
   const navigate = useNavigate();
@@ -30,24 +30,20 @@ function App() {
   return (
     <Router basename="/splittext-gh-pages">
       <div className="app-root">
-        <div className="background-dither">
-          <Dither
-            waveSpeed={0.07}
-            waveFrequency={2.5}
-            waveAmplitude={0.25}
-            waveColor={[0.12, 0.14, 0.18]}
-            colorNum={6}
-            pixelSize={2}
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.25}
+        <div className="background-squares">
+          <Squares 
+            speed={0.5} 
+            squareSize={40}
+            direction="diagonal"
+            borderColor="#fff"
+            hoverFillColor="#222"
           />
         </div>
         <div className="content">
           <div className="main-content">
             <Routes>
               <Route path="/" element={
-                <div style={{ height: '600px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="centered-content">
                   <CardSwap
                     cardDistance={60}
                     verticalDistance={70}

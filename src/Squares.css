@@ -1,9 +1,10 @@
-.dither-container {
+.squares-bg {
   width: 100vw !important;
   height: 100vh !important;
   position: absolute !important;
   inset: 0;
   z-index: 0;
-  pointer-events: none;
+  display: block;
+  pointer-events: auto;
   background: transparent;
 }
