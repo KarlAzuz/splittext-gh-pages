@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/splittext-gh-pages/static/css/main.0c191fd3.css",
+    "main.js": "/splittext-gh-pages/static/js/main.7c0b3b7c.js",
+    "index.html": "/splittext-gh-pages/index.html",
+    "main.0c191fd3.css.map": "/splittext-gh-pages/static/css/main.0c191fd3.css.map",
+    "main.7c0b3b7c.js.map": "/splittext-gh-pages/static/js/main.7c0b3b7c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c191fd3.css",
+    "static/js/main.7c0b3b7c.js"
+  ]
+}
