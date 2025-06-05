@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/splittext-gh-pages/static/css/main.1e744e7f.css",
+    "main.css": "/splittext-gh-pages/static/css/main.0c6f3a37.css",
     "main.js": "/splittext-gh-pages/static/js/main.f1030c2b.js",
     "index.html": "/splittext-gh-pages/index.html",
-    "main.1e744e7f.css.map": "/splittext-gh-pages/static/css/main.1e744e7f.css.map",
+    "main.0c6f3a37.css.map": "/splittext-gh-pages/static/css/main.0c6f3a37.css.map",
     "main.f1030c2b.js.map": "/splittext-gh-pages/static/js/main.f1030c2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e744e7f.css",
+    "static/css/main.0c6f3a37.css",
     "static/js/main.f1030c2b.js"
   ]
 }
