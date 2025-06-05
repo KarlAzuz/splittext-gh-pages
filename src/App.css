@@ -1,22 +1,6 @@
 /* ...existing code... */
 
-.falling-word {
-  cursor: pointer;
-  /* ...other styles... */
-  transition: box-shadow 0.3s;
-}
-
-.falling-word:hover {
-  animation: glow-red 0.7s infinite alternate;
-}
-
-@keyframes glow-red {
-  from {
-    box-shadow: 0 0 5px 2px red;
-  }
-  to {
-    box-shadow: 0 0 20px 8px red;
-  }
-}
+/* Remove .falling-word and related styles if present. */
+/* Add or keep only general layout styles if needed. */
 
 /* ...existing code... */
