@@ -152,26 +152,17 @@ button:hover {
   background: #4bb6e6;
 }
 
-.card {
-  background: rgba(30, 32, 40, 0.96);
-  border-radius: 18px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
-  padding: 2.5rem 2rem;
-  margin: 0 1rem;
-  min-width: 320px;
-  max-width: 420px;
-  text-align: center;
-  transition: box-shadow 0.2s;
-}
-
+/* Remove .card, .card-spotlight, .home-card border/background rules */
 .card,
 .card-spotlight,
 .home-card {
-  border: 1.5px solid rgba(127, 215, 255, 0.18);
-  box-sizing: border-box;
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
-.home-card, .card-spotlight.custom-spotlight-card {
+/* Set size for the home panels */
+.home-star-border {
   min-width: 340px;
   max-width: 420px;
   min-height: 320px;

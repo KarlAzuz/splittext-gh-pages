@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export function Card({ children }) {
-  return (
-    <div className="card">
-      {children}
-    </div>
-  );
+  // Remove the .card wrapper, just return children
+  return children;
 }
 
 export default function CardSwap({

@@ -62,107 +62,101 @@ function App() {
                     delay={5000}
                     pauseOnHover={false}
                   >
-                    <StarBorder as="div" className="home-star-border home-card" color="cyan" speed="5s">
-                      <Card>
-                        <div className="card-inner">
-                          <h3>
-                            <SplitText
-                              text="Welcome to the Homepage"
-                              className="text-2xl font-semibold text-center"
-                              delay={60}
-                              duration={0.7}
-                              ease="power3.out"
-                              splitType="chars"
-                              from={{ opacity: 0, y: 40 }}
-                              to={{ opacity: 1, y: 0 }}
-                              threshold={0.1}
-                              rootMargin="-100px"
-                              textAlign="center"
-                            />
-                          </h3>
+                    <StarBorder as="div" className="home-star-border" color="cyan" speed="5s">
+                      <div className="card-inner">
+                        <h3>
                           <SplitText
-                            text="Discover our site with a beautiful retro dark theme and interactive cards."
-                            className="text-lg text-center"
-                            delay={18}
+                            text="Welcome to the Homepage"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
                             duration={0.7}
                             ease="power3.out"
-                            splitType="words"
-                            from={{ opacity: 0, y: 24 }}
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
                             to={{ opacity: 1, y: 0 }}
                             threshold={0.1}
                             rootMargin="-100px"
                             textAlign="center"
                           />
-                        </div>
-                      </Card>
+                        </h3>
+                        <SplitText
+                          text="Discover our site with a beautiful retro dark theme and interactive cards."
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </div>
                     </StarBorder>
-                    <StarBorder as="div" className="home-star-border home-card" color="cyan" speed="5s">
-                      <Card>
-                        <div className="card-inner">
-                          <h3>
-                            <SplitText
-                              text="Explore Jobs"
-                              className="text-2xl font-semibold text-center"
-                              delay={60}
-                              duration={0.7}
-                              ease="power3.out"
-                              splitType="chars"
-                              from={{ opacity: 0, y: 40 }}
-                              to={{ opacity: 1, y: 0 }}
-                              threshold={0.1}
-                              rootMargin="-100px"
-                              textAlign="center"
-                            />
-                          </h3>
+                    <StarBorder as="div" className="home-star-border" color="cyan" speed="5s">
+                      <div className="card-inner">
+                        <h3>
                           <SplitText
-                            text="See our current job openings and join our amazing team!"
-                            className="text-lg text-center"
-                            delay={18}
+                            text="Explore Jobs"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
                             duration={0.7}
                             ease="power3.out"
-                            splitType="words"
-                            from={{ opacity: 0, y: 24 }}
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
                             to={{ opacity: 1, y: 0 }}
                             threshold={0.1}
                             rootMargin="-100px"
                             textAlign="center"
                           />
-                        </div>
-                      </Card>
+                        </h3>
+                        <SplitText
+                          text="See our current job openings and join our amazing team!"
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </div>
                     </StarBorder>
-                    <StarBorder as="div" className="home-star-border home-card" color="cyan" speed="5s">
-                      <Card>
-                        <div className="card-inner">
-                          <h3>
-                            <SplitText
-                              text="Contact Us"
-                              className="text-2xl font-semibold text-center"
-                              delay={60}
-                              duration={0.7}
-                              ease="power3.out"
-                              splitType="chars"
-                              from={{ opacity: 0, y: 40 }}
-                              to={{ opacity: 1, y: 0 }}
-                              threshold={0.1}
-                              rootMargin="-100px"
-                              textAlign="center"
-                            />
-                          </h3>
+                    <StarBorder as="div" className="home-star-border" color="cyan" speed="5s">
+                      <div className="card-inner">
+                        <h3>
                           <SplitText
-                            text="Have questions? Reach out to us anytime."
-                            className="text-lg text-center"
-                            delay={18}
+                            text="Contact Us"
+                            className="text-2xl font-semibold text-center"
+                            delay={60}
                             duration={0.7}
                             ease="power3.out"
-                            splitType="words"
-                            from={{ opacity: 0, y: 24 }}
+                            splitType="chars"
+                            from={{ opacity: 0, y: 40 }}
                             to={{ opacity: 1, y: 0 }}
                             threshold={0.1}
                             rootMargin="-100px"
                             textAlign="center"
                           />
-                        </div>
-                      </Card>
+                        </h3>
+                        <SplitText
+                          text="Have questions? Reach out to us anytime."
+                          className="text-lg text-center"
+                          delay={18}
+                          duration={0.7}
+                          ease="power3.out"
+                          splitType="words"
+                          from={{ opacity: 0, y: 24 }}
+                          to={{ opacity: 1, y: 0 }}
+                          threshold={0.1}
+                          rootMargin="-100px"
+                          textAlign="center"
+                        />
+                      </div>
                     </StarBorder>
                   </CardSwap>
                 </div>
