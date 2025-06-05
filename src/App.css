@@ -126,11 +126,11 @@ html, body, #root, .app-root {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 64px;
+  height: auto; /* Allow height to grow if links wrap */
+  min-height: 64px;
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow-x: auto; /* Allow nav to scroll horizontally if needed */
 }
 
 .nav-logo {
@@ -143,7 +143,7 @@ html, body, #root, .app-root {
 .nav-links {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap; /* Allow links to wrap on small screens */
+  flex-wrap: wrap; /* Allow links to wrap to new lines */
   justify-content: flex-end;
   min-width: 0;
 }
@@ -156,7 +156,6 @@ html, body, #root, .app-root {
   padding: 0.5em 0;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-bottom 0.2s;
-  white-space: nowrap; /* Prevent link text from breaking */
 }
 
 .nav-link.active,
@@ -197,7 +196,7 @@ html, body, #root, .app-root {
   .nav-links {
     width: 100%;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Ensure wrapping on mobile */
     justify-content: flex-start;
   }
   .main-content {
