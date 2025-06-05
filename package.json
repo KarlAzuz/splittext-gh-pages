@@ -2,44 +2,15 @@
   "name": "splittext-gh-pages",
   "version": "1.0.0",
   "private": false,
-  "description": "A React demo for FallingText using Matter.js",
+  "description": "A simple website inspired by reactbits.dev",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build"
   },
   "dependencies": {
-    "@react-three/postprocessing": "^2.19.1",
-    "framer-motion": "^12.16.0",
-    "gsap": "^3.13.0",
-    "matter-js": "^0.19.0",
-    "ogl": "^1.0.11",
-    "postprocessing": "^6.37.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^4.12.0",
-    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "gh-pages": "^6.3.0"
-  },
-  "homepage": "https://karlazuz.github.io/splittext-gh-pages/"
+  }
 }
