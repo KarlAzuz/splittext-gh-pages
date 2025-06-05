@@ -192,23 +192,12 @@ button:hover {
   justify-content: center;
 }
 
-.dock-spotlight {
-  border-radius: 16px;
-  border: 1.5px solid rgba(127, 215, 255, 0.18);
-  box-sizing: border-box;
-  padding: 6px;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .dock-icon-inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 600px) {
