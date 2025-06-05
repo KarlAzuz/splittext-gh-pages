@@ -13,6 +13,8 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "framer-motion": "^12.16.0",
+    "gsap": "^3.13.0",
     "matter-js": "^0.19.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
