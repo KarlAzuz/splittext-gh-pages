@@ -1,5 +1,33 @@
 /* ...existing code... */
 
+/* Remove old dock styles */
+.dock-panel,
+.dock-item,
+.dock-label {
+  display: none !important;
+}
+
+/* Remove unused content/layout styles */
+.main-content,
+.centered-content,
+.home-star-border,
+.card-inner,
+.dock-icon-inner {
+  display: none !important;
+}
+
+/* Remove old card styles not for CardSwap */
+.card-spotlight,
+.home-card {
+  display: none !important;
+}
+
+/* Remove placeholder/app-background */
+.app-background,
+.placeholder-center {
+  display: none !important;
+}
+
 /* Make sure there are NO .falling-word or animation styles here. */
 
 html, body, #root, .app-root {
@@ -314,10 +342,4 @@ button:hover {
   .main-desc {
     font-size: 1rem;
   }
-}
-
-/* Remove .app-background and .placeholder-center if present */
-.app-background,
-.placeholder-center {
-  display: none !important;
 }
